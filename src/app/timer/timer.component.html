@@ -1,0 +1,38 @@
+<div
+  fxLayout
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  class="timer-container"
+>
+  <div class="text-align-center">
+    <button
+      (click)="clearCount()"
+      mat-icon-button
+      color="secondary"
+      [matBadge]="count"
+      matBadgeOverlap="true"
+    >
+      <mat-icon class="material-icons-outlined" fontIcon="mail"></mat-icon>
+    </button>
+
+    <div fxLayout fxLayout="row" fxLayoutGap="8px" class="button-container">
+      <button
+        class="start-button"
+        mat-raised-button
+        color="primary"
+        [disabled]="isTimerRunning"
+        (click)="startTimer()"
+      >
+        Start
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!isTimerRunning"
+        (click)="stopTimer()"
+      >
+        Stop
+      </button>
+    </div>
+  </div>
+</div>
